@@ -83,6 +83,18 @@ impl<K: Clone> Boxplot<K, BoxplotOrientV<K, f32>> {
             _p: PhantomData,
         }
     }
+
+    pub fn new_vertical_from_values(key: K, values: [f32; 5]) -> Self {
+        Self {
+            style: Into::<ShapeStyle>::into(BLACK),
+            width: DEFAULT_WIDTH,
+            whisker_width: 1.0,
+            offset: 0.0,
+            key,
+            values,
+            _p: PhantomData,
+        }
+    }
 }
 
 impl<K: Clone> Boxplot<K, BoxplotOrientH<K, f32>> {
