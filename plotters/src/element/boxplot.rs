@@ -84,6 +84,7 @@ impl<K: Clone> Boxplot<K, BoxplotOrientV<K, f32>> {
         }
     }
 
+    /// Create a new vertical boxplot element from values.
     pub fn new_vertical_from_values(key: K, values: [f32; 5]) -> Self {
         Self {
             style: Into::<ShapeStyle>::into(BLACK),
